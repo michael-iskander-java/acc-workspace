@@ -89,9 +89,41 @@ public class Anagram {
 		return true;
 	}
 	
+	
+	public static boolean aaaa(String anagram1, String anagram2) {
+		
+		if(anagram1.length() != anagram2.length()) {
+			return false;
+		}
+		Map<Character, Integer> testMap = new HashMap<>();
+		
+		for (Character a : anagram1.toCharArray()) {
+			testMap.put(a, testMap.getOrDefault(a, 0)+1);
+		}
+		System.out.println("test map: "+ testMap);
+		
+		Map<Character, Integer> test = new HashMap<>();
+		
+		for (Character b : anagram2.toCharArray()) {
+			test.put(b, test.getOrDefault(b, 0)+1);
+		}
+		
+		System.out.println("test : "+ test);
+		
+		
+		if (test.equals(testMap)) {
+			return true;
+		} else {
+			return false;
+		}
+		
+		
+	}
+	
+	
 	public static void main(String[] args) {
 		
-		System.out.println("is Anagram: "+ isAnagramCaseInsensitive("Gee23eks", "kSee32eg"));
+		System.out.println("is Anagram: "+ aaaa("Gee23eks", "ksee32eG"));
 		
 	}
 
